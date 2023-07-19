@@ -10,6 +10,11 @@
     outline: none;
 }
 
+
+.p-datatable .p-datatable-tbody > tr > td {
+    height: 160px;
+ }
+
 table, td, th{
     border: 1px solid black;
 }

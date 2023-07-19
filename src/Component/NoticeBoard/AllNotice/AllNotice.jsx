@@ -8,36 +8,38 @@ import pdf_3 from '../../../noticpdf/notice_2.pdf'
 import pdf_4 from '../../../noticpdf/notice_3.pdf'
 import pdf_5 from '../../../noticpdf/notice_4.pdf'
 
+const rowHeight = 300;
+
 const column = [
     {
         name: 'ক্রমিক ',
         selector: row => row.id,
         sortable: true,
-        width: "80px",
-        height: '300px'
+       
     },
     {
         name: 'শিরোনাম ',
         selector: row => row.name,
-        sortable: true
+        sortable: true,
+       
     },
     {
         name: 'প্রকাশের তারিক',
         selector: row => row.publishData,
         sortable: true,
-        width: '80px'
+       
     },
     {
         name: 'ভিউ',
         selector: row => row.view,
         sortable: true,
-        width: '80px'
+      
     },
     {
         name: 'ডাউনলোড',
         selector: row => row.download,
         sortable: true,
-        width: '80px'
+      
     },
 ]
 
@@ -96,7 +98,7 @@ const AllNotice = () => {
         const newData = data.filter(row => {
             return row.name.toLowerCase().includes(event.target.value.toLowerCase())
         })
-        console.log(newData)
+        // console.log(newData)
         setSearch(newData)
     }
     return (
@@ -107,10 +109,15 @@ const AllNotice = () => {
                 <input className='input__field' type="text" placeholder='search by name' onChange={handleSearch} />
             </div>
             {/* <DataTable
+                tableStyle={{ minWidth: '100%' }}
                 columns={column}
                 data={search}
                 highlightOnHover
+                rowHeight={rowHeight}
                 striped
+                width={500}
+                height={500}
+                headerHeight={50}
                 selector
                 pagination
             /> */}
